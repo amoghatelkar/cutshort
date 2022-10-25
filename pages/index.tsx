@@ -9,8 +9,7 @@ import { First } from '../components/1/1';
 import { Fourth } from '../components/4/4';
 import { Second } from '../components/2/2';
 import { Third } from '../components/3/3';
-import EdenIcon from '../public/vercel.svg'
-import EdenSvg from '../components/SvgComponent/EdenSvg';
+import EdenIcon from '../public/vercel.svg';
 import { Input } from '@mui/icons-material';
 import { ChakraProvider } from '@chakra-ui/react';
 
@@ -65,9 +64,11 @@ const Home: NextPage = () => {
             <h2 style={{ fontWeight: 'bolder',fontFamily:'Inter' }}>Eden</h2>
           </span>
         </Box>
-        <Box sx={{ width: '100%',paddingTop:'45px',marginBottom:'30px' }}>
+        <div className={styles.stepperDiv}>
+        <Box sx={{ paddingTop:'45px',marginBottom:'30px',width:'250px' }}>
           <Stepper selectedStep={selectedStep} steps={steps}/>
         </Box>
+        </div>
         <Box sx={{ width: '100%' }}>
           <Form />
         </Box>

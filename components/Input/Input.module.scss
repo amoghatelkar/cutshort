@@ -1,0 +1,52 @@
+.input {
+    .label {
+        display: block;
+        margin: 5px 0;
+        font-size: smaller;
+        color: #40434A;
+        font-family: 'Inter';
+        font-weight: bold;
+    }
+
+    .prefix {
+        display: flex;
+        height: 35px;
+        border: solid 2px #BDC5C6;
+        border-radius: 5px;
+        margin: 10px 0 5px 0;
+
+        p {
+
+            background-color: #F4F6F9;
+            margin: 0;
+            padding: 9px;
+            font-size: small;
+            color: #BDC5C6;
+            font-family: 'Inter';
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .inputField {
+            border: 0;
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    .inputField {
+        width: -webkit-fill-available;
+        border-radius: 5px;
+        margin: 5px 0;
+        height: 35px;
+        border: solid 2px #BDC5C6;
+    }
+
+    .inputField::placeholder {
+        padding: 7px;
+        font-size: small;
+        color: #BDC5C6;
+        font-family: 'Inter';
+        font-weight: bold;
+    }
+}

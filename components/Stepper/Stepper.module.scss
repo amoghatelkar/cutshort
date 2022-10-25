@@ -1,0 +1,41 @@
+.stepper{
+    display: flex;
+    .step{
+        display: flex;
+        width: 100%;
+        .platform{
+            background-color: #5A4AD1;
+            color: aliceblue;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            justify-content: center;
+            label{
+                vertical-align: -webkit-baseline-middle!important;
+            }
+        }
+        .platformInAvtive{
+            background-color: white;
+            color: black;
+            border: solid 0.01px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            justify-content: center;
+            label{
+                vertical-align: -webkit-baseline-middle!important;
+            }
+        }
+        .connecter{
+            display: contents;
+            hr{
+                width: 86%;
+                height: max-content;
+                align-self: center;
+            }
+        }
+    }
+    
+}

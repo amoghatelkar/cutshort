@@ -16,7 +16,7 @@ export const Stepper: FC<IStepper> = ({ selectedStep, steps }) => {
                             <label>{step}</label>
                         </div>
                         {steps.length - 1 === index ? undefined : <div className={styles.connecter}>
-                            <hr />
+                        <hr style={ index < selectedStep ? {background:"#5A4AD1"} : index === selectedStep ? {background:"linear-gradient(90deg, #5A4AD1 50%, white 50%)"} : {} }/>
                         </div>}
 
                     </div>

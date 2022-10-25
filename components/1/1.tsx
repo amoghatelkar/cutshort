@@ -11,8 +11,8 @@ export const First: FC<IFirst> = ({ setStep }) => {
     return (
         <>
             <Box sx={{ width: '100%', paddingTop: '40px', textAlign: 'center' }}>
-                <h2 style={{ fontFamily: 'Inter', fontWeight: 'bolder' }}> Welcome! First things first...</h2>
-                <p style={{ color: 'grey', fontFamily: 'Inter', fontWeight: 'bolder', marginBottom: '10px' }}>You can always change them later</p>
+                <h2 style={{ fontFamily: 'Inter', fontWeight: 'bolder', margin:'5px 0'}}> {"Welcome! First things first..."}</h2>
+                <p style={{ color: 'grey', fontFamily: 'Inter', fontWeight: 'bolder', margin: '10px 0 20px', fontSize:'smaller' }}>{"You can always change them later."}</p>
             </Box>
             <Box style={{ padding: '0 20%' }}>
                 <div style={{ paddingTop: '5px' }}>

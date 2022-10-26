@@ -39,13 +39,13 @@ export const Second: FC<ISecond> = ({ setStep, setPerson, person }) => {
             </Box>
             <Box className={styles.body}>
                 <div className={styles.workspaceName}>
-                    <Input placeholder={CONSTANTS.TWO.INPUT.WORKSPACENAME.PLACEHOLDER} name={CONSTANTS.TWO.INPUT.WORKSPACENAME.NAME} onChange={(e) => onInputChange(e)} label={CONSTANTS.TWO.INPUT.WORKSPACENAME.LABEL} />
+                    <Input required={true} placeholder={CONSTANTS.TWO.INPUT.WORKSPACENAME.PLACEHOLDER} name={CONSTANTS.TWO.INPUT.WORKSPACENAME.NAME} onChange={(e) => onInputChange(e)} label={CONSTANTS.TWO.INPUT.WORKSPACENAME.LABEL} />
                 </div>
                 <div className={styles.workspaceURL}>
-                    <Input placeholder={CONSTANTS.TWO.INPUT.WORKSPACEURL.PLACEHOLDER} label={CONSTANTS.TWO.INPUT.WORKSPACEURL.LABEL} onChange={(e) => onInputChange(e)} name={CONSTANTS.TWO.INPUT.WORKSPACEURL.NAME} prefix={CONSTANTS.TWO.INPUT.WORKSPACEURL.PREFIX} />
+                    <Input required={false} placeholder={CONSTANTS.TWO.INPUT.WORKSPACEURL.PLACEHOLDER} label={CONSTANTS.TWO.INPUT.WORKSPACEURL.LABEL} onChange={(e) => onInputChange(e)} name={CONSTANTS.TWO.INPUT.WORKSPACEURL.NAME} prefix={CONSTANTS.TWO.INPUT.WORKSPACEURL.PREFIX} />
                 </div>
                 <div className={styles.submit}>
-                    <Button text={CONSTANTS.BUTTON.CREATE_WORKSPACE} onClick={onSubmit} />
+                    <Button disabled={!workspaceName} text={CONSTANTS.BUTTON.CREATE_WORKSPACE} onClick={onSubmit} />
                 </div>
             </Box>
         </>

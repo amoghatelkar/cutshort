@@ -29,7 +29,7 @@ export const CONSTANTS = {
             },
             WORKSPACEURL:{
                 PLACEHOLDER:"Example",
-                LABEL:"Workspace URL(optional)",
+                LABEL:"Workspace URL",
                 NAME:"workspaceURL",
                 PREFIX:"www.eden.com/"
             }

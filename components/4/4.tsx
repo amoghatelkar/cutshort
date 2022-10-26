@@ -23,7 +23,7 @@ export const Fourth: FC<IFourth> = ({ setStep, setPerson, person }) => {
             </Box>
             <Box className={styles.body}>
                 <div className={styles.submit}>
-                    <Button text={CONSTANTS.BUTTON.LAUNCH_EDEN} onClick={() => setStep(3)} />
+                    <Button disabled={false} text={CONSTANTS.BUTTON.LAUNCH_EDEN} onClick={() => setStep(3)} />
                 </div>
             </Box>
         </>

@@ -25,7 +25,7 @@ export const Third: FC<IThird> = ({ setStep, setPerson, person }) => {
         description: 'Wikis, docs, tasks & projects all in one place'
     }
 
-    const [useType, setUseType] = useState('myself');
+    const [useType, setUseType] = useState('Myself');
 
     const onSubmit = () => {
         setPerson({ ...person, useType: useType });
@@ -36,10 +36,10 @@ export const Third: FC<IThird> = ({ setStep, setPerson, person }) => {
             <React.Fragment>
                 <CardContent>
                     {text === 'Myself' ? <MyselfIcon htmlColor={useType === myself.text ? "#5A4AD1" : '#40434A'} sx={{ fontSize: 40 }} /> : <TeamIcon htmlColor={useType === team.text ? "#5A4AD1" : '#40434A'} sx={{ fontSize: 40 }} />}
-                    <Typography variant="h5" style={{ fontFamily: 'Inter', fontSize: 'small', fontWeight: 'bolder' }} component="div">
+                    <Typography variant="h5" style={{ fontFamily: 'Inter', fontSize: 'small', fontWeight: 'bolder' , marginBottom:'2px'}} component="div">
                         {text}
                     </Typography>
-                    <Typography variant="body2" style={{ fontFamily: 'Inter', fontSize: 'small', color: 'grey' }}>
+                    <Typography variant="body2" style={{ fontFamily: 'Inter', fontSize: 'small', color: '#BDC5D6',fontWeight: 600 }}>
                         {description}
                     </Typography>
                 </CardContent>
@@ -62,7 +62,7 @@ export const Third: FC<IThird> = ({ setStep, setPerson, person }) => {
                     <Card className={useType === team.text ? styles.teamActive : styles.team} variant="outlined" onClick={() => setUseType(team.text)}>{card(team.text, team.description)}</Card>
                 </div>
                 <div className={styles.submit}>
-                    <Button text={CONSTANTS.BUTTON.CREATE_WORKSPACE} onClick={onSubmit} />
+                    <Button disabled={!useType} text={CONSTANTS.BUTTON.CREATE_WORKSPACE} onClick={onSubmit} />
                 </div>
             </Box>
         </>

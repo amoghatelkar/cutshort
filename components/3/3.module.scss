@@ -20,22 +20,30 @@
     .cards{
         padding-top: 5px;
         display: flex;
+        cursor: pointer ;
         .myself{
-            margin: 5px;
+            margin: 0 5px 0 0;
+            width: 49%;
         }
         .myselfActive{
             border: solid 2px #5A4AD1;
-            margin: 5px;
+            margin: 0 5px 0 0;
+            width: 49%;
         }
         .team{
-            margin:5px;
+            margin: 0 0 0 5px;
+            width: 49%;
         }
         .teamActive{
             border: solid 2px #5A4AD1;
-            margin: 5px;
+            margin: 0 0 0 5px;
+            width: 49%;
         }
     }
     .submit{
         padding-top: 20px;
+    }
+    @media only screen and (max-width: 768px) {
+        padding: 0 10%;
     }
 }

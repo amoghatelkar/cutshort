@@ -39,13 +39,13 @@ export const First: FC<IFirst> = ({ setStep, setPerson, person }) => {
             </Box>
             <Box className={styles.body}>
                 <div className={styles.fullName}>
-                    <Input placeholder={CONSTANTS.ONE.INPUT.FULLNAME.PLACEHOLDER} label={CONSTANTS.ONE.INPUT.FULLNAME.LABEL} name={CONSTANTS.ONE.INPUT.FULLNAME.NAME} onChange={(e) => onInputChange(e)} />
+                    <Input required={true} placeholder={CONSTANTS.ONE.INPUT.FULLNAME.PLACEHOLDER} label={CONSTANTS.ONE.INPUT.FULLNAME.LABEL} name={CONSTANTS.ONE.INPUT.FULLNAME.NAME} onChange={(e) => onInputChange(e)} />
                 </div>
                 <div className={styles.displayName}>
-                    <Input placeholder={CONSTANTS.ONE.INPUT.DISPLAYNAME.PLACEHOLDER} label={CONSTANTS.ONE.INPUT.DISPLAYNAME.LABEL} name={CONSTANTS.ONE.INPUT.DISPLAYNAME.NAME} onChange={(e) => onInputChange(e)} />
+                    <Input required={true} placeholder={CONSTANTS.ONE.INPUT.DISPLAYNAME.PLACEHOLDER} label={CONSTANTS.ONE.INPUT.DISPLAYNAME.LABEL} name={CONSTANTS.ONE.INPUT.DISPLAYNAME.NAME} onChange={(e) => onInputChange(e)} />
                 </div>
                 <div className={styles.submit}>
-                    <Button text={CONSTANTS.BUTTON.CREATE_WORKSPACE} onClick={onSubmit} />
+                    <Button disabled={!(fullName && displayName)}  text={CONSTANTS.BUTTON.CREATE_WORKSPACE} onClick={onSubmit} />
                 </div>
             </Box>
         </>

@@ -1,11 +1,22 @@
 .input {
-    .label {
-        display: block;
-        margin: 5px 0;
-        font-size: smaller;
-        color: #40434A;
-        font-family: 'Inter';
-        font-weight: bold;
+    .labelGroup {
+        display: flex;
+        .label {
+            display: block;
+            margin: 5px 0;
+            font-size: smaller;
+            color: #40434A;
+            font-family: 'Inter';
+            font-weight: bold;
+        }
+        p {
+            margin: 5px;
+            display: inline;
+            font-family: 'Inter';
+            font-size: small;
+            color: #BDC5D6;
+            font-weight: bold;
+        }
     }
 
     .prefix {
@@ -32,7 +43,12 @@
             margin: 0;
             padding: 0 10px;
             font-weight: bolder;
+            @media only screen and (max-width: 768px) {
+               overflow: auto;
+            }
         }
+
+        
     }
 
     .inputField {
@@ -43,6 +59,7 @@
         border: solid 2px #BDC5C6;
         padding: 0 10px;
         font-weight: bolder;
+        
     }
 
     .inputField::placeholder {

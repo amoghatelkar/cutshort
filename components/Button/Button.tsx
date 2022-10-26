@@ -1,12 +1,21 @@
-import {FC} from 'react';
+import { FC, useEffect, useState } from 'react';
 import styles from './Button.module.scss'
-interface IButton{
-    onClick():void;
-    text:string;
+interface IButton {
+    onClick(): void;
+    text: string;
+    disabled: boolean;
 }
-export const Button:FC<IButton> = ({onClick,text}) => {
+export const Button: FC<IButton> = ({ onClick, text, disabled }) => {
 
-    return(
-        <button className={styles.button} style={{background:'#5A4AD1',color:'white',width:'100%'}} onClick={onClick} >{text}</button>
+    const applyStyle = () => {
+        if (disabled) {
+            return { background: '#BDC5D6', color: 'white', width: '100%', cursor: 'not-allowed' }
+        } else {
+            return { background: '#5A4AD1', color: 'white', width: '100%', cursor: 'pointer' }
+        }
+    }
+    
+    return (
+        <button className={styles.button} style={applyStyle()} onClick={disabled ? undefined : onClick} >{text}</button>
     )
 }

@@ -17,11 +17,13 @@ export const Third: FC<IThird> = ({ setStep, setPerson, person }) => {
 
     const myself = {
         text: 'Myself',
+        title:'For myself',
         description: 'Write better. Think more clearly. Stay organized'
     }
 
     const team = {
         text: 'Team',
+        title:'With my Team',
         description: 'Wikis, docs, tasks & projects all in one place'
     }
 
@@ -31,13 +33,13 @@ export const Third: FC<IThird> = ({ setStep, setPerson, person }) => {
         setPerson({ ...person, useType: useType });
         setStep(3);
     }
-    const card = (text: string, description: string) => {
+    const card = (title:string ,text: string, description: string) => {
         return (
             <React.Fragment>
                 <CardContent>
                     {text === 'Myself' ? <MyselfIcon htmlColor={useType === myself.text ? "#5A4AD1" : '#40434A'} sx={{ fontSize: 40 }} /> : <TeamIcon htmlColor={useType === team.text ? "#5A4AD1" : '#40434A'} sx={{ fontSize: 40 }} />}
                     <Typography variant="h5" style={{ fontFamily: 'Inter', fontSize: 'small', fontWeight: 'bolder' , marginBottom:'2px'}} component="div">
-                        {text}
+                        {title}
                     </Typography>
                     <Typography variant="body2" style={{ fontFamily: 'Inter', fontSize: 'small', color: '#BDC5D6',fontWeight: 600 }}>
                         {description}
@@ -58,8 +60,8 @@ export const Third: FC<IThird> = ({ setStep, setPerson, person }) => {
             <Box 
             className={styles.body}>
                 <div className={styles.cards}>
-                    <Card className={useType === myself.text ? styles.myselfActive : styles.myself} variant="outlined" onClick={() => setUseType(myself.text)}>{card(myself.text, myself.description)}</Card>
-                    <Card className={useType === team.text ? styles.teamActive : styles.team} variant="outlined" onClick={() => setUseType(team.text)}>{card(team.text, team.description)}</Card>
+                    <Card className={useType === myself.text ? styles.myselfActive : styles.myself} variant="outlined" onClick={() => setUseType(myself.text)}>{card(myself.title, myself.text , myself.description)}</Card>
+                    <Card className={useType === team.text ? styles.teamActive : styles.team} variant="outlined" onClick={() => setUseType(team.text)}>{card(team.title, team.text, team.description)}</Card>
                 </div>
                 <div className={styles.submit}>
                     <Button disabled={!useType} text={CONSTANTS.BUTTON.CREATE_WORKSPACE} onClick={onSubmit} />

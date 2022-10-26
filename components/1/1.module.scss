@@ -1,0 +1,29 @@
+.header{
+    width: 100%;
+    padding-top: 40px;
+    text-align: center;
+    .title{
+        font-family: Inter;
+        font-weight: bolder;
+        margin: 5px 0;
+    }
+    .description{
+        color: grey;
+        font-family: Inter;
+        font-weight: bolder;
+        margin: 10px 0 20px;
+        font-size: smaller;
+    }
+}
+.body{
+    padding: 0 20%;
+    .fullName{
+        padding-top: 5px;
+    }
+    .displayName{
+        padding-top: 5px;
+    }
+    .submit{
+        padding-top: 20px;
+    }
+}

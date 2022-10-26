@@ -1,31 +1,52 @@
 import { Box } from "@mui/material";
-import { FC } from "react";
+import { FC, useState } from "react";
 import { Input } from '../Input/Input';
 import { Button } from '../Button/Button';
+import { IPerson } from '../../pages/index';
+import styles from './1.module.scss';
+import { CONSTANTS } from "../../utils/constant";
 
 interface IFirst {
     setStep(step: number): void;
+    setPerson(person: IPerson): void;
+    person: IPerson;
 }
-export const First: FC<IFirst> = ({ setStep }) => {
+
+export const First: FC<IFirst> = ({ setStep, setPerson, person }) => {
+
+    const [fullName, setFullName] = useState('');
+    const [displayName, setDisplayName] = useState('');
+
+    const onInputChange = (e: any) => {
+        const { name, value } = e.target;
+        if (name === CONSTANTS.ONE.INPUT.FULLNAME.NAME) {
+            setFullName(value);
+        } else {
+            setDisplayName(value);
+        }
+    }
+
+    const onSubmit = () => {
+        setPerson({ ...person, fullName: fullName, displayName: displayName });
+        setStep(1);
+    }
 
     return (
         <>
-            <Box sx={{ width: '100%', paddingTop: '40px', textAlign: 'center' }}>
-                <h2 style={{ fontFamily: 'Inter', fontWeight: 'bolder', margin:'5px 0'}}> {"Welcome! First things first..."}</h2>
-                <p style={{ color: 'grey', fontFamily: 'Inter', fontWeight: 'bolder', margin: '10px 0 20px', fontSize:'smaller' }}>{"You can always change them later."}</p>
+            <Box className={styles.header} >
+                <h2 className={styles.title}> {CONSTANTS.ONE.TITLE}</h2>
+                <p className={styles.description}>{CONSTANTS.ONE.DESRIPTION}</p>
             </Box>
-            <Box style={{ padding: '0 20%' }}>
-                <div style={{ paddingTop: '5px' }}>
-                    <Input placeholder="Steve Jobs" label="Full Name" />
+            <Box className={styles.body}>
+                <div className={styles.fullName}>
+                    <Input placeholder={CONSTANTS.ONE.INPUT.FULLNAME.PLACEHOLDER} label={CONSTANTS.ONE.INPUT.FULLNAME.LABEL} name={CONSTANTS.ONE.INPUT.FULLNAME.NAME} onChange={(e) => onInputChange(e)} />
                 </div>
-                <div style={{ paddingTop: '5px' }}>
-                    <Input placeholder="Steve" label="Display Name" />
+                <div className={styles.displayName}>
+                    <Input placeholder={CONSTANTS.ONE.INPUT.DISPLAYNAME.PLACEHOLDER} label={CONSTANTS.ONE.INPUT.DISPLAYNAME.LABEL} name={CONSTANTS.ONE.INPUT.DISPLAYNAME.NAME} onChange={(e) => onInputChange(e)} />
                 </div>
-                <div style={{ paddingTop: '20px' }}>
-                    <Button text={'Create Worksapce'} onClick={() => setStep(1)} />
+                <div className={styles.submit}>
+                    <Button text={CONSTANTS.BUTTON.CREATE_WORKSPACE} onClick={onSubmit} />
                 </div>
-
-
             </Box>
         </>
     )

@@ -1,31 +1,52 @@
 import { Box } from "@mui/material";
-import { FC } from "react";
+import { FC, useState } from "react";
 import { Input } from '../Input/Input';
 import { Button } from '../Button/Button';
+import { IPerson } from '../../pages/index';
+import styles from './2.module.scss';
+import { CONSTANTS } from "../../utils/constant";
 
-interface ISecond{
-    setStep(step:number):void;
+interface ISecond {
+    setStep(step: number): void;
+    setPerson(person: IPerson): void;
+    person: IPerson;
 }
-export const Second:FC<ISecond> = ({setStep}) =>{
+
+export const Second: FC<ISecond> = ({ setStep, setPerson, person }) => {
+
+    const [workspaceName, setWorkspaceName] = useState('');
+    const [workspaceURL, setWorkspaceURL] = useState('');
+
+    const onInputChange = (e: any) => {
+        const { value, name } = e.target;
+        if (name === CONSTANTS.TWO.INPUT.WORKSPACENAME.NAME) {
+            setWorkspaceName(value);
+        } else {
+            setWorkspaceURL(value);
+        }
+    }
+
+    const onSubmit = () => {
+        setPerson({ ...person, workspaceName: workspaceName, workspaceURL: workspaceURL });
+        setStep(2);
+    }
 
     return (
         <>
-            <Box sx={{ width: '100%', paddingTop: '40px', textAlign: 'center' }}>
-                <h2 style={{ fontFamily: 'Inter', fontWeight: 'bolder', margin:'5px 0'}}>{"Let's set up a home for all your work"}</h2>
-                <p style={{ color: 'grey', fontFamily: 'Inter', fontWeight: 'bolder', margin: '10px 0 20px', fontSize:'smaller' }}>{"You can always create another workspace later."}</p>
+            <Box className={styles.header}>
+                <h2 className={styles.title}>{CONSTANTS.TWO.TITLE}</h2>
+                <p className={styles.description}>{CONSTANTS.TWO.DESRIPTION}</p>
             </Box>
-            <Box style={{ padding: '0 20%' }}>
-                <div style={{ paddingTop: '5px' }}>
-                    <Input placeholder="Eden" label="Workspace Name" />
+            <Box className={styles.body}>
+                <div className={styles.workspaceName}>
+                    <Input placeholder={CONSTANTS.TWO.INPUT.WORKSPACENAME.PLACEHOLDER} name={CONSTANTS.TWO.INPUT.WORKSPACENAME.NAME} onChange={(e) => onInputChange(e)} label={CONSTANTS.TWO.INPUT.WORKSPACENAME.LABEL} />
                 </div>
-                <div style={{ paddingTop: '5px' }}>
-                    <Input placeholder="Example" label="Workspace URL(optional)" prefix={'www.eden.com/'} />
+                <div className={styles.workspaceURL}>
+                    <Input placeholder={CONSTANTS.TWO.INPUT.WORKSPACEURL.PLACEHOLDER} label={CONSTANTS.TWO.INPUT.WORKSPACEURL.LABEL} onChange={(e) => onInputChange(e)} name={CONSTANTS.TWO.INPUT.WORKSPACEURL.NAME} prefix={CONSTANTS.TWO.INPUT.WORKSPACEURL.PREFIX} />
                 </div>
-                <div style={{ paddingTop: '20px' }}>
-                    <Button text={'Create Worksapce'} onClick={() => setStep(2)} />
+                <div className={styles.submit}>
+                    <Button text={CONSTANTS.BUTTON.CREATE_WORKSPACE} onClick={onSubmit} />
                 </div>
-
-
             </Box>
         </>
     )

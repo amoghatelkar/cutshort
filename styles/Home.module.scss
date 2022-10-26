@@ -1,0 +1,28 @@
+.main{
+  padding-top: 70px;
+  .header{
+    width: 100%;
+    text-align: center;
+    .title{
+      font-weight: bolder;
+      font-family: Inter;
+    }
+  }
+
+  .form{
+    width: 100%;
+  }
+}
+
+.logo {
+ display: inline-flex;
+}
+
+.stepperDiv{
+  text-align: -webkit-center!important;
+  .stepperBox{
+    padding-top: 45px;
+    margin-bottom: 30px;
+    width: 250px;
+  }
+}

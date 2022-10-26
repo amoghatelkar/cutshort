@@ -1,10 +1,11 @@
-import { Button } from '@mui/material';
 import { FC, useState } from 'react';
 import styles from './Stepper.module.scss';
+
 interface IStepper {
     selectedStep: number;
     steps: number[];
 }
+
 export const Stepper: FC<IStepper> = ({ selectedStep, steps }) => {
 
     return (
@@ -22,12 +23,6 @@ export const Stepper: FC<IStepper> = ({ selectedStep, steps }) => {
                     </div>
                 )}
             </div>
-            {/* <Button onClick={() => setCurrentStep(currentStep+1)}>
-                Next
-        </Button>
-        <Button onClick={() => setCurrentStep(currentStep-1)}>
-                Previous
-        </Button> */}
         </>
     )
 }

@@ -29,8 +29,9 @@
 
         .inputField {
             border: 0;
-            padding: 0;
             margin: 0;
+            padding: 0 10px;
+            font-weight: bolder;
         }
     }
 
@@ -40,10 +41,11 @@
         margin: 5px 0;
         height: 35px;
         border: solid 2px #BDC5C6;
+        padding: 0 10px;
+        font-weight: bolder;
     }
 
     .inputField::placeholder {
-        padding: 7px;
         font-size: small;
         color: #BDC5C6;
         font-family: 'Inter';

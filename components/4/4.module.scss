@@ -1,0 +1,41 @@
+.header{
+    width: 100%;
+    padding-top: 40px;
+    text-align: center;
+    .title{
+        font-family: Inter;
+        font-weight: bolder;
+        margin: 5px 0;
+    }
+    .description{
+        color: grey;
+        font-family: Inter;
+        font-weight: bolder;
+        margin: 10px 0 20px;
+        font-size: smaller;
+    }
+}
+.body{
+    padding: 0 20%;
+    .cards{
+        padding-top: 5px;
+        display: flex;
+        .myself{
+            margin: 5px;
+        }
+        .myselfActive{
+            border: solid 2px #5A4AD1;
+            margin: 5px;
+        }
+        .team{
+            margin:5px;
+        }
+        .teamActive{
+            border: solid 2px #5A4AD1;
+            margin: 5px;
+        }
+    }
+    .submit{
+        padding-top: 20px;
+    }
+}

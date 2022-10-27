@@ -55,7 +55,7 @@ export const Third: FC<IThird> = ({ setStep, setPerson, person }) => {
         <>
             <Box className={styles.header}>
                 <h2 className={styles.title}> {CONSTANTS.THREE.TITLE}</h2>
-                <p className={styles.description}>{}</p>
+                <p className={styles.description}>{CONSTANTS.THREE.DESRIPTION}</p>
             </Box>
             <Box 
             className={styles.body}>
